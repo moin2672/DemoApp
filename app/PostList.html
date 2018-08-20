@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="postsApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>Post Lists</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <!-- <link rel="stylesheet" href="./css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,300">
+    <link rel="stylesheet" href="http://textangular.com/dist/textAngular.css" type="text/css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Upload</a>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0" style="padding-right:200px">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+        </div>
+
+    </nav>
+
+    <div class="container" style="padding-top:25px;">
+
+
+        <div class="row" ng-controller="PostListController">
+            <div class="col-md-auto" ng-repeat="post in Posts">
+                <a href="" style="text-decoration:none;color:white;">
+                    <div class="card border-dark mb-3" style="max-width: 20rem;">
+                        <div class="card-header" style="min-height:100px;">
+                            <h5>{{post.postTitle}}</h5>
+                        </div>
+                        <div class="card-body" style="min-height:250px;">
+                            <p align="right" style="font-size:70%;">{{post.date}}</p>
+                            <p class="card-text">{{post.postShortDescription}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+
+        <div class="example">
+            <a href="#">
+                <i class="fa fa-plus-circle example" aria-hidden="true"></i>
+            </a>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="./lib/jquery-3.2.1.slim.min.js"></script>
+    <script src="./lib/popper.min.js"></script>
+    <script src="./lib/bootstrap.min.js"></script>
+    <script src="./lib/angular/angular.js"></script>
+    <script src="./lib/angular/angular-sanitize.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/controllers/PostListController.js"></script>
+
+
+    <script src='http://textangular.com/dist/textAngular-rangy.min.js'></script>
+    
+      <script src='http://textangular.com/dist/textAngular-sanitize.min.js'></script>
+    
+      <script src='http://textangular.com/dist/textAngular.min.js'></script>
+
+
+</body>
+
+</html>
