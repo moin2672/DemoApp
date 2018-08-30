@@ -113,7 +113,7 @@
 
                     <div class="col-md-auto" ng-repeat="rPost in post.RelatedPosts | limitTo:3 ">
                         <a href="#" style="text-decoration:none;">
-                            <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                            <!-- <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
                                 <div class="card-body">
                                     <h5 class="card-title">{{rPost.postTitle}}</h5>
                                 </div>
@@ -122,6 +122,21 @@
                                     
                                     <div ng-bind-html="getImg(rPost.postContent)">some content</div>
                                     <p class="card-text" ng-bind-html="getPara(rPost.postContent)">some para content</p>
+                                </div>
+                            </div> -->
+                            <div class="card text-white mb-3" style="max-width: 20rem;">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{rPost.postTitle}}</h5>
+                                  <h6 class="card-subtitle text-muted">{{rPost.date}}</h6>
+                                </div>
+                                
+                                <div style="height:100%; width: 100%;" ng-bind-html="getImg(rPost.postContent)">some content</div>
+                                <div class="card-body">
+                                
+                                  <p class="card-text"> <p  ng-bind-html="getPara(rPost.postContent)">some para text</p> </p>
+                                </div>
+                                <div class="card-footer text-muted">
+                                  2 days ago
                                 </div>
                             </div>
                         </a>

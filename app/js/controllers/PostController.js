@@ -3,7 +3,13 @@
  postsApp.controller('PostController',
      function PostController($scope, postData){
          $scope.sortOrder="views";
-         $scope.post=postData.post;
+         //$scope.post=postData.post;
+         postData.getPost()
+                .success(function(post){$scope.post=post;})
+                .error(function(data,status,headers,config){
+                     $log.warn(data,status,headers(),config);
+                 });
+
          $scope.getImg = function(s){
             var start=-1, end=-1;
             for(var i=0;i<s.length;i++){
