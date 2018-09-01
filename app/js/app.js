@@ -1,3 +1,3 @@
 'use strict';
 
-var postsApp = angular.module('postsApp', ['ngSanitize','textAngular']);
+var postsApp = angular.module('postsApp', ['ngSanitize','textAngular','ngResource']);
