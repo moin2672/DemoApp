@@ -1,0 +1,46 @@
+
+  
+    <form name="newPostForm">
+
+      <div class="form-group">
+        <label for="postTitle">Post Title</label>
+        <input type="text" required class="form-control" ng-model="post.postTitle" id="postTitle" placeholder="Post Title....">
+      </div>
+      
+      <div class="form-group">
+        <div text-angular="text-angular" name="postContent" ng-model="post.postContent" ta-disabled='disabled'></div>
+      </div>
+
+     
+      <!-- <div class="form-group">
+        <label for="Description">Post Content:</label>
+        <textarea class="form-control rsize" required id="Description" ng-model="post.Description" placeholder="Post Content...." rows="10"></textarea>
+      </div>
+       <div class="form-group">
+        <label for="shortDes">Short Fascinating Description:</label>
+        <textarea class="form-control rsize" id="shortDes" ng-model="post.shortDes" placeholder="Short Fascinating Description...." rows="3"></textarea>
+      </div> -->
+      
+      <div class="form-group">
+        <label for="authorName">User Name</label>
+        
+        <input type="text" class="form-control"  id="authorName"
+          ng-pattern="/^[-A-Za-z0-9]{5,20}$/"
+         ng-model="post.authorName" placeholder="User Name....">
+      </div>
+      <div class="form-group">
+        <label for="emailID">E-mail ID</label>
+        <input type="text" class="form-control" id="emailID"
+        type="email" 
+         required ng-model="post.emailID" placeholder="E-mail ID....">
+        <i style="font-size:80%;color:yellow;">E-mail ID will not be visible @ Post</i>
+      </div>
+      
+      
+     
+        <button type="submit" ng-click="savePost(post, newPostForm)" ng-disabled="newPostForm.$invalid" class="btn btn-success">Publish</button>
+        <button type="button" ng-click="cancel()" class="btn btn-secondary">Cancel</button>
+  
+
+    </form>
+  

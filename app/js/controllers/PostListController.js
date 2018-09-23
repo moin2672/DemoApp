@@ -1,7 +1,7 @@
 'use strict';
 
  postsApp.controller('PostListController',
-     function PostListController($scope){
+     function PostListController($scope, postData){
         $scope.getImg = function(s){
             var start=-1, end=-1;
             for(var i=0;i<s.length;i++){
@@ -55,7 +55,9 @@
               }
             }
         }
-         $scope.Posts=[
+        // console.log(postData.getAllPosts());
+         $scope.Posts=postData.getAllPosts();  
+         /*$scope.Posts=[
                 {
                 id:1,
                 date:"23 Jun 2018",
@@ -116,6 +118,6 @@
                     postContent:'<p></p><p></p><p></p><p></p><p></p><p></p><p><br/><img src="https://www.thehindu.com/news/national/9vfqt3/article24720131.ece/alternates/FREE_300/ALIZAFAR" alt="External Affairs Minister Sushma Swaraj and Pakistan’s acting Law and Information Minister Syed Ali Zafar during former Prime Minister Atal Bihari Vajpayee’s cremation at the Rashtriya Smriti Sthal in New Delhi on August 17, 2018." title="External Affairs Minister Sushma Swaraj and Pakistan’s acting Law and Information Minister Syed Ali Zafar during former Prime Minister Atal Bihari Vajpayee’s cremation at the Rashtriya Smriti Sthal in New Delhi on August 17, 2018." class="media-object adaptive placeholder lead-img" style="width: 300px;float: left;"/></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p></p><p><span class="lead-img-caption " style="width: 300px;"></span></p><p>External Affairs Minister Sushma Swaraj and Pakistan’s acting Law and Information Minister Syed Ali Zafar during former Prime Minister Atal Bihari Vajpayee’s cremation at the Rashtriya Smriti Sthal in New Delhi on August 17, 2018.   | Photo Credit: <a href="https://www.thehindu.com/profile/photographers/PTI/" style="background-color: transparent;color: white;text-decoration: underline;">PTI</a></p><p></p><p></p><p><span class="more-in" style="font-size: 10px;">MORE-IN</span></p><p><a href="https://www.thehindu.com/topic/Atal-Bihari-Vajpayee-1924-2018-/" class="topic-1 txt" style="width: 150px;font-size: 14px;text-align: center;float: left;">Atal Bihari Vajpayee (1924-2018)</a></p><p></p><p>Visiting acting Law and Information Minister says there is a thaw in India-Pakistan relations.</p><p></p><p>The decision to send a Pakistani delegation to attend former Prime Minister Atal Bihari Vajpayee’s funeral was taken by “all stakeholders” including Prime Minister-designate Imran Khan, said visiting acting Law and Information Minister Syed Ali Zafar. “This was an occasion where all felt that Pakistan must be present and share your grief,” Mr. Zafar, who is part of the caretaker government demitting office, said in an interview to <em>The Hindu</em>.</p><p></p><p>Positive move</p><p></p><p>“A very positive move and hopes of a thaw came during Mr. Imran Khan’s speech after the election and then the call by the Indian Prime Minister Narendra Modi [to congratulate Mr. Khan] changed the mood positively.”</p><p>Mr. Zafar met External Affairs Minister Sushma Swaraj, one of the very few meetings she has had with Pakistani officials since her visit to Islamabad in December 2015, after which the Pathankot airbase attack derailed ties.</p><p>The External Affairs Ministry spokesperson said the two leaders had remembered a “visionary (Vajpayee) who dreamed [of a] terror-free and prosperous subcontinent,” a reference to India’s demand that Pakistan end support to terror groups.</p><p></p><p>Recites poem</p><p></p><p>Speaking to journalists after the meeting, Mr. Zafar, who recited Mr. Vajpayee’s poem from his visit to Lahore in 1999, “<em>Jung nahin hone denge </em>(We won’t allow a war)”, also said that he hoped there would be other “less sad” meetings when “[India-Pakistan] issues, including Jammu and Kashmir, will be resolved through dialogue.”</p><p>Asked if tensions between the two countries had been discussed in his meeting with Ms. Swaraj, Mr. Zafar replied, “This was not the occasion to discuss issues of a political nature.”</p><p>“Our meeting was positive, and I sensed a feeling from both sides that there could be progress, and I hope that in the coming days we could see more such meetings and progress,” Mr. Zafar, who flew back to Islamabad on Friday night, added.</p><p></p><p></p><p></p><p></p><p></p><p><a href="https://github.com/fraywing/textAngular"></a> </p><p></p><p></p><p></p>',
                     views:32
                     }];
-        
+        */
      }
  ); 

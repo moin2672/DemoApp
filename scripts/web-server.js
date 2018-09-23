@@ -10,7 +10,10 @@ app.use(bodyParser.json());
 app.use(express.static(rootPath+'/app'));
 
 app.get('/data/post/:id',events.get);
+app.get('/data/post',events.getAll);
 app.post('/data/post/:id',events.save);
+
+app.get('*', function(req,res){res.sendFile(rootPath+'/app/index.html');});
 
 app.listen(8000);
 

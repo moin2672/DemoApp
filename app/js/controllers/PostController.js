@@ -1,12 +1,14 @@
 'use strict';
 
  postsApp.controller('PostController',
-     function PostController($scope, postData){
+     function PostController($scope, postData, $routeParams, $route){
          $scope.sortOrder="views";
-         postData.getPost()
+       /*  postData.getPost($routeParams.postId)
                   .$promise
                   .then(function(post){$scope.post=post; console.log(post);})
                   .catch(function(response){console.log(response);});
+         */
+        $scope.post=$route.current.locals.post;         
          /*postData.getPost()
                 .success(function(post){$scope.post=post;})
                 .error(function(data,status,headers,config){

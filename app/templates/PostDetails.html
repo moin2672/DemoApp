@@ -1,0 +1,139 @@
+
+        <div class="row">
+            <div class="col-lg-8" style="border:1px solid silver;">
+                <div class="card-header">
+                    <h2>{{post.postTitle}}</h2>
+                </div>
+
+                <p align="right">
+                    Dated On: {{post.date}}
+                    <span align="right" style="color:yellowgreen">(Courtesy: {{post.authorName | uppercase}})</span>
+                </p>
+                <hr style="border:0.5px solid silver;">
+                <div class="row">
+                    <div class="col" align="center">
+                        <a href="#" title="google-plus">
+                            <i class="fa fa-google-plus-square icn" aria-hidden="true" style="font-size:30px;color:#d34836;"></i>
+                        </a>
+                    </div>
+                    <div class="col" align="center">
+                        <a href="#" title="facebook">
+                            <i class="fa fa-facebook-square icn" aria-hidden="true" style="font-size:30px;color:#3B5998;"></i>
+                        </a>
+                    </div>
+                    <div class="col" align="center">
+                        <a href="#" title="twitter">
+                            <i class="fa fa-twitter-square icn" aria-hidden="true" style="font-size:30px;color:#1dcaff;"></i>
+                        </a>
+                    </div>
+                    <div class="col" align="center">
+                        <a href="#" title="whatsapp">
+                            <i class="fa fa-whatsapp icn" aria-hidden="true" style="font-size:30px;color:#25D366;"></i>
+                        </a>
+                    </div>
+                    <div class="col" align="center">
+                        <a href="#" title="Email">
+                            <i class="fa fa-envelope icn" aria-hidden="true" style="font-size:30px;color:#f2a60c;"></i>
+                        </a>
+                    </div>
+                    <div class="col" align="center">
+                        <a href="#" title="text message">
+                            <i class="fa fa-comment-o icn" aria-hidden="true" style="font-size:30px;color:silver;"></i>
+                        </a>
+                    </div>  
+                    <div class="col" align="center">
+                        <a href="#" title="telegram">
+                            <i class="fa fa-telegram icn" aria-hidden="true" style="font-size:30px;color:#0088CC;"></i>
+                        </a>
+                    </div>
+                    <div class="col" align="center">
+                        <a href="#" title="instagram">
+                            <i class="fa fa-instagram icn" aria-hidden="true" style="font-size:30px;color:#FF0084;"></i>
+                        </a>
+                    </div>
+                </div>
+                <hr style="border:0.5px solid silver;">
+
+                <!--</div>-->
+                <div ng-bind-html="post.postContent">some content</div>
+            </div>
+            <div class="col-lg-4">
+                <div class="row" style="padding-top:25px;">
+
+
+                    <div class="col-md-auto" ng-repeat="rPost in post.RelatedPosts | limitTo:3 ">
+                        <a href="#" style="text-decoration:none;">
+                            <!-- <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{rPost.postTitle}}</h5>
+                                </div>
+                                <div class="card-header" style="min-height:250px;">
+                                    <p align="right" style="font-size:70%;">{{rPost.date}}</p>
+                                    
+                                    <div ng-bind-html="getImg(rPost.postContent)">some content</div>
+                                    <p class="card-text" ng-bind-html="getPara(rPost.postContent)">some para content</p>
+                                </div>
+                            </div> -->
+                            <div class="card text-white mb-3" style="max-width: 20rem;">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{rPost.postTitle}}</h5>
+                                  <h6 class="card-subtitle text-muted">{{rPost.date}}</h6>
+                                </div>
+                                
+                                <div style="height:100%; width: 100%;" ng-bind-html="getImg(rPost.postContent)">some content</div>
+                                <div class="card-body">
+                                
+                                  <p class="card-text"> <p  ng-bind-html="getPara(rPost.postContent)">some para text</p> </p>
+                                </div>
+                                <div class="card-footer text-muted">
+                                  2 days ago
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- <a href="#" class="float">
+            <i class="fa fa-share-alt my-float" ></i>
+          
+        </a> -->
+
+
+        <div id="disqus_thread"></div>
+
+        <div class="example">
+            <a href="#">
+                <i class="fa fa-plus-circle example" aria-hidden="true"></i>
+            </a>
+        </div>
+
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+        var disqus_config = function () {
+            this.page.url = 'https://plnkr.co/edit/?p=preview/comment2'; // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = 'comment2'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+            // just change the comment2 to comment1 to get the previous comment
+        };
+
+        (function () { // DON'T EDIT BELOW THIS LINE
+            var d = document,
+                s = d.createElement('script');
+            s.src = 'https://sampledeys.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+
